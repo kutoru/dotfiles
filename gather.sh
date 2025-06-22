@@ -1,0 +1,28 @@
+#! /bin/bash
+
+# vars
+
+scriptDir=$(dirname "$0")
+
+dirs=(
+    ~/.config/nvim
+)
+
+files=(
+    ~/.bashrc
+    ~/.config/hypr/hyprland.conf
+    ~/.config/kitty/kitty.conf
+)
+
+# copy
+
+for item in ${dirs[@]} ${files[@]}
+do
+    localItem=$(echo "$item" | sed "s|^$HOME|/home|")
+    localItemDir=$(dirname $localItem)
+
+    echo "Copying $item"
+
+    mkdir -p $scriptDir$localItemDir
+    cp -ri $item $scriptDir$localItemDir
+done

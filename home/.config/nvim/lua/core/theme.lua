@@ -1,0 +1,8 @@
+vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
+vim.cmd("highlight LineNr guifg=NvimLightCyan")
+vim.cmd("highlight LineNrAbove guifg=NvimDarkCyan")
+vim.cmd("highlight LineNrBelow guifg=NvimDarkCyan")
+vim.cmd("highlight StatusLine guibg=NONE guifg=NvimLightGrey2")
+vim.cmd("highlight StatusLineNC guibg=NONE guifg=NvimLightGrey2")
+-- vim.cmd("highlight StatusLine guibg=NONE guifg=NvimLightGrey2 gui=bold")
+-- vim.cmd("highlight StatusLineNC guibg=NONE guifg=NvimLightGrey2 gui=bold")
