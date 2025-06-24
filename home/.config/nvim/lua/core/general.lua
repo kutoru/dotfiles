@@ -31,11 +31,21 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = "*",
     callback = function()
         vim.opt.formatoptions:remove({ "c", "r", "o" })
-    end
+    end,
 })
 
 -- remove warning/error column
--- vim.opt.signcolumn="no"
+-- vim.opt.signcolumn = "no"
+
+-- or even better, disable diagnostic signs
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+        },
+    },
+})
 
 -- remove tildes at eof
 -- vim.opt.fillchars = { eob = " " }

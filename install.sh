@@ -22,4 +22,9 @@ echo ""
 echo "===== Installing packages ====="
 echo ""
 
-yay -S --needed vlc
+# for music
+#mpv mpv-mpris
+# or
+#vlc
+
+#yay -S --needed {some packages}

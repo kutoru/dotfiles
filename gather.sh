@@ -24,5 +24,5 @@ do
     echo "Copying $item"
 
     mkdir -p $scriptDir$localItemDir
-    cp -ri $item $scriptDir$localItemDir
+    cp -r $item $scriptDir$localItemDir
 done

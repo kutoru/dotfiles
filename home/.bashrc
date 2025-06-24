@@ -17,4 +17,12 @@ alias ls='ls -A --color=auto'
 alias grep='grep --color=auto'
 alias cdf='cd "$(_fzfdirs)"'
 alias vlcf='vlc "$(_fzfdirs)"'
-PS1='[\u@\h \W]\$ '
+
+#COLOR0='\[\e[00m\]'
+#COLOR1='\[\e[01;34m\]'
+#COLOR2='\[\e[01;32m\]'
+#COLOR3='\[\e[01;36m\]'
+
+#PS1='[\u@\h \W]\$ '
+#PS1="$COLOR1\u$COLOR0:$COLOR2\W$COLOR0 > "
+PS1="\u:\W > "

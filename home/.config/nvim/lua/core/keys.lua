@@ -4,9 +4,6 @@ local map = vim.keymap.set
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- reload nvim config
-map("n", "<Leader>r", ":source %<CR>")
-
 -- center screen on C-d and C-u
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
@@ -27,8 +24,8 @@ map("v", "<M-k>", ":m '<-2<CR>gv=gv", { silent = true })
 map("i", "<C-c>", "<ESC>")
 
 -- delete and paste without copying
-map("v", "<leader>d", "\"_d")
-map("v", "<leader>p", "\"_dp")
+map("v", "<leader>d", '"_d')
+map("v", "<leader>p", '"_dp')
 
 -- insert a new line without entering insert mode
 map("n", "<M-o>", "mto<ESC>`t")
