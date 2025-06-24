@@ -28,10 +28,10 @@ vim.opt.clipboard = "unnamedplus"
 
 -- disable auto comments
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "*",
-    callback = function()
-        vim.opt.formatoptions:remove({ "c", "r", "o" })
-    end,
+  pattern = "*",
+  callback = function()
+    vim.opt.formatoptions:remove({ "c", "r", "o" })
+  end,
 })
 
 -- remove warning/error column
@@ -39,12 +39,12 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- or even better, disable diagnostic signs
 vim.diagnostic.config({
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = "",
-            [vim.diagnostic.severity.WARN] = "",
-        },
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN] = "",
     },
+  },
 })
 
 -- remove tildes at eof
