@@ -25,6 +25,7 @@ return {
   },
   config = function()
     local servers = {
+      ts_ls = {},
       lua_ls = {
         Lua = {
           telemetry = { enable = false },
@@ -68,6 +69,8 @@ return {
 
     for server, _ in pairs(servers) do
       vim.lsp.config[server] = {
+        on_attach = on_attach,
+        capabilities = capabilities,
         settings = servers[server],
       }
     end

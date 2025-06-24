@@ -1,0 +1,147 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+$shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
+$section-bg: rgba(255, 255, 255, 0.25);
+$section-fg: rgba(255, 255, 255, 0.5);
+$popover-bg: rgba(0, 0, 0, 0.9);
+
+Bar {
+  background: rgba(0, 0, 0, 0.25);
+  color: $fg-color;
+  font-weight: bold;
+
+  padding: 8px;
+
+  Workspaces {
+    background: $section-bg;
+    box-shadow: $shadow;
+    padding: 8px;
+    border-radius: 32px;
+
+    label {
+      transition: background ease-out 0.25s;
+
+      background: $section-bg;
+      box-shadow: $shadow;
+      padding: 4px;
+      border-radius: 16px;
+
+      min-width: 24px;
+      min-height: 24px;
+
+      &.focused {
+        background: $section-fg;
+      }
+    }
+  }
+
+  Volume {
+    background: transparent;
+
+    >button {
+      background: $section-bg;
+      box-shadow: $shadow;
+      padding: 8px;
+      border-radius: 16px;
+      border: 0;
+
+    }
+
+    contents>label {
+      background: $section-fg;
+      box-shadow: $shadow;
+      border-radius: 16px;
+
+      min-width: 32px;
+      min-height: 32px;
+    }
+
+    popover {
+      arrow {
+        background: $popover-bg;
+      }
+
+      contents {
+        background: transparent;
+        box-shadow: 0;
+        border: 0;
+        padding: 0;
+        border-radius: 0;
+
+        VolumePopover {
+          background: $popover-bg;
+          padding: 8px;
+          border-radius: 16px;
+
+          color: white;
+
+          label {
+            margin-top: 8px;
+          }
+
+          scale {
+            min-height: 150px;
+          }
+
+          >box {
+            background: $section-bg;
+            box-shadow: $shadow;
+            border-radius: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  Time {
+    background: transparent;
+
+    >button {
+      background: $section-bg;
+      box-shadow: $shadow;
+      border: 0;
+      padding: 8px;
+      border-radius: 16px;
+    }
+
+    box>label {
+      background: $section-fg;
+      box-shadow: $shadow;
+      padding: 4px;
+      border-radius: 16px;
+    }
+
+    popover {
+      arrow {
+        background: $popover-bg;
+      }
+
+      contents {
+        background: transparent;
+        box-shadow: 0;
+        border: 0;
+        padding: 0;
+        border-radius: 0;
+
+        calendar {
+          background: $popover-bg;
+          color: white;
+          padding: 8px;
+          border-radius: 16px;
+
+          header {
+            button {
+              color: white;
+
+              &:hover {
+                background: transparent;
+                color: gray;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

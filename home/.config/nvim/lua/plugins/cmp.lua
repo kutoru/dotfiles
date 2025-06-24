@@ -16,7 +16,7 @@ return {
       ["<C-e>"] = cmp.mapping.scroll_docs(4),
       ["<C-Space>"] = cmp.mapping.complete(),
       -- ["<C-s>"] = cmp.mapping.close(),
-      ["<CR>"] = cmp.mapping.confirm({ select = true }),
+      ["<TAB>"] = cmp.mapping.confirm({ select = true }),
     })
 
     local snippet = {

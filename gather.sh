@@ -6,6 +6,7 @@ scriptDir=$(dirname "$0")
 
 dirs=(
     ~/.config/nvim
+    ~/.config/ags
 )
 
 files=(
