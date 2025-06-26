@@ -4,21 +4,22 @@
 
 scriptDir=$(dirname "$0")
 
-dirs=(
+items=(
     ~/.config/nvim
     ~/.config/ags
-)
 
-files=(
     ~/.bashrc
     ~/.config/hypr/hyprland.conf
     ~/.config/kitty/kitty.conf
+    /etc/sddm.conf.d/default.conf
+    /usr/share/sddm/scripts/Xsetup
+    /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
+    /usr/share/sddm/themes/sddm-astronaut-theme/Themes/hyprland_kath.conf
 )
 
 # copy
 
-for item in ${dirs[@]} ${files[@]}
-do
+for item in ${items[@]}; do
     localItem=$(echo "$item" | sed "s|^$HOME|/home|")
     localItemDir=$(dirname $localItem)
 

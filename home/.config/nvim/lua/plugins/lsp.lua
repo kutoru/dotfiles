@@ -52,12 +52,18 @@ return {
       -- maps
 
       local map = vim.keymap.set
+      -- local custom_border = { "", "", "", " ", "", "", "", " " }
 
       map("n", "<F2>", vim.lsp.buf.rename)
       map("n", "<leader>ca", vim.lsp.buf.code_action)
       map("n", "gd", vim.lsp.buf.definition)
       map("n", "gi", vim.lsp.buf.implementation)
-      map("n", "gh", vim.lsp.buf.hover)
+      map("n", "gh", function()
+        vim.lsp.buf.hover({ border = "solid" })
+      end)
+      map("n", "<leader>d", function()
+        vim.diagnostic.open_float({ border = "solid" })
+      end)
     end
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()

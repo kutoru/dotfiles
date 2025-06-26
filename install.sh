@@ -22,9 +22,11 @@ echo ""
 echo "===== Installing packages ====="
 echo ""
 
-# for music
-#mpv mpv-mpris
-# or
-#vlc
+# sddm themes: https://github.com/Keyitdev/sddm-astronaut-theme
+# sddm itself:
+yay -S --needed sddm qt6-svg qt6-multimedia-ffmpeg xorg-xrandr
 
-#yay -S --needed {some packages}
+# also install:
+#something ags something something astal
+#mpv mpv-mpris or vlc
+#pactl fzf nvim
