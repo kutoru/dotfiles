@@ -17,6 +17,7 @@ return {
       ["<C-Space>"] = cmp.mapping.complete(),
       -- ["<C-s>"] = cmp.mapping.close(),
       ["<TAB>"] = cmp.mapping.confirm({ select = true }),
+      ["<CR>"] = cmp.mapping.confirm({ select = true }),
     })
 
     local snippet = {

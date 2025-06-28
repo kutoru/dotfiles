@@ -26,3 +26,11 @@ alias vlcf='vlc "$(_fzfdirs)"'
 #PS1='[\u@\h \W]\$ '
 #PS1="$COLOR1\u$COLOR0:$COLOR2\W$COLOR0 > "
 PS1="\u:\W > "
+
+# pnpm
+export PNPM_HOME="/home/kutoru/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

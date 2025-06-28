@@ -17,13 +17,46 @@ items=(
     /usr/share/sddm/themes/sddm-astronaut-theme/Themes/hyprland_kath.conf
 )
 
-# copy
+# helpers
+
+replace_home() {
+    echo "$1" | sed "s|^$HOME|/home|"
+}
+
+get_root() {
+    next=$(dirname $1)
+
+    if [ $next = "/" ]; then
+        echo $1
+    else
+        echo $(get_root $next)
+    fi
+}
+
+# remove repo dirs
+
+declare -A rootDirs
 
 for item in ${items[@]}; do
-    localItem=$(echo "$item" | sed "s|^$HOME|/home|")
+    localItem=$(replace_home $item)
+    rootDir=$(get_root $localItem)
+
+    rootDirs[$rootDir]=1
+done
+
+for dir in "${!rootDirs[@]}"; do
+    echo "Removing .$dir"
+
+    rm -r $scriptDir$dir
+done
+
+# copy from host to repo
+
+for item in ${items[@]}; do
+    localItem=$(replace_home $item)
     localItemDir=$(dirname $localItem)
 
-    echo "Copying $item"
+    echo "Copying into .$localItem"
 
     mkdir -p $scriptDir$localItemDir
     cp -r $item $scriptDir$localItemDir

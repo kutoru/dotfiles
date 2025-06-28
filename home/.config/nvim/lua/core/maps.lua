@@ -53,3 +53,6 @@ local function toggle_line_wrap()
 end
 
 map("n", "<M-x>", toggle_line_wrap, { silent = true, expr = true })
+
+-- other
+vim.cmd("cnoreabbrev ex Explore")

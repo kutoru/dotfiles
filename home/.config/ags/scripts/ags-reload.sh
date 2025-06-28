@@ -1,4 +1,4 @@
 #!/bin/bash
 
 astal -q
-ags run --gtk4
+ags run --gtk 4
