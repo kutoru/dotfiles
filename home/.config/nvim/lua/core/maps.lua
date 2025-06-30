@@ -25,7 +25,7 @@ map("i", "<C-c>", "<ESC>")
 
 -- delete and paste without copying
 map("v", "<leader>d", '"_d')
-map("v", "<leader>p", '"_dp')
+map("v", "<leader>p", "P")
 
 -- insert a new line without entering insert mode
 map("n", "<M-o>", "mto<ESC>`t")
@@ -54,5 +54,14 @@ end
 
 map("n", "<M-x>", toggle_line_wrap, { silent = true, expr = true })
 
--- other
+-- ex abbrev
 vim.cmd("cnoreabbrev ex Explore")
+
+-- windows
+map("n", "<Leader>h", "<C-w>h")
+map("n", "<Leader>j", "<C-w>j")
+map("n", "<Leader>k", "<C-w>k")
+map("n", "<Leader>l", "<C-w>l")
+
+-- vimdoc help
+map("n", "gK", "K")

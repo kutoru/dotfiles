@@ -34,15 +34,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- remove warning/error column
--- vim.opt.signcolumn = "no"
-
--- or even better, disable diagnostic signs
+-- disable diagnostic signs
 vim.diagnostic.config({
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = "",
       [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.INFO] = "",
       [vim.diagnostic.severity.HINT] = "",
     },
   },
@@ -50,3 +48,15 @@ vim.diagnostic.config({
 
 -- remove tildes at eof
 -- vim.opt.fillchars = { eob = " " }
+
+-- search
+vim.opt.smartcase = true
+vim.opt.hlsearch = false
+
+vim.cmd([[
+  augroup vimrc-incsearch-highlight
+    autocmd!
+    autocmd CmdlineEnter /,\? :set hlsearch
+    autocmd CmdlineLeave /,\? :set nohlsearch
+  augroup END
+]])
