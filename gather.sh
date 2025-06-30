@@ -6,10 +6,11 @@ scriptDir=$(dirname "$0")
 
 items=(
     ~/.config/nvim
+    ~/.config/hypr
+    ~/.config/scripts
     ~/.config/ags
 
     ~/.bashrc
-    ~/.config/hypr/hyprland.conf
     ~/.config/kitty/kitty.conf
     /etc/sddm.conf.d/default.conf
     /usr/share/sddm/scripts/Xsetup

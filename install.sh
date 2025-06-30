@@ -29,4 +29,5 @@ yay -S --needed sddm qt6-svg qt6-multimedia-ffmpeg xorg-xrandr
 # also install:
 #something ags something something astal
 #mpv mpv-mpris or vlc
-#pactl fzf nvim
+# misc:
+yay -S --needed pactl fzf nvim hypridle
