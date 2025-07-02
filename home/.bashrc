@@ -15,7 +15,7 @@ alias _fzfdirs='find -L -type d | _fzfpreview'
 
 alias ls='ls -A --color=auto'
 alias grep='grep --color=auto'
-alias cdf='cd "$(_fzfdirs)"'
+alias cdf='cd "$(dirname $(_fzfpreview))"'
 alias vlcf='vlc "$(_fzfdirs)"'
 
 #COLOR0='\[\e[00m\]'

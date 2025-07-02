@@ -1,4 +1,4 @@
 require("core.maps")
 require("core.general")
-require("core.theme")
+require("themes.initial")
 require("core.lazy")
