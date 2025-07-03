@@ -1,5 +1,4 @@
 local watcher
-local run_after = 0
 
 local watch = function(filepath, on_change)
   if watcher then
@@ -13,14 +12,6 @@ local watch = function(filepath, on_change)
     filepath,
     {},
     vim.schedule_wrap(function(err)
-      -- debounce
-      local now = os.time()
-      if now <= run_after then
-        return
-      end
-      run_after = now + 5
-
-      -- the actual callback
       if err then
         vim.notify("Error watching pywal cache: " .. err, vim.log.levels.ERROR)
       else
