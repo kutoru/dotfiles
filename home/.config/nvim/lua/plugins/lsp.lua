@@ -41,8 +41,9 @@ return {
 
       map("n", "<F2>", vim.lsp.buf.rename)
       map("n", "<leader>ca", vim.lsp.buf.code_action)
-      map("n", "gd", vim.lsp.buf.definition)
-      map("n", "gi", vim.lsp.buf.implementation)
+      map("n", "gd", require("telescope.builtin").lsp_definitions, { desc = "Get definition" })
+      map("n", "gl", require("telescope.builtin").lsp_references, { desc = "Get symbol locations" })
+      map("n", "gi", vim.lsp.buf.implementation, { desc = "Get implementation" })
       map("n", "gh", function()
         vim.lsp.buf.hover({ border = "solid" })
       end)
