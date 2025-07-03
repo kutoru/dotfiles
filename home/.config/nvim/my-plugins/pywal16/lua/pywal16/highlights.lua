@@ -10,47 +10,74 @@
 
 -- netrw:
 -- Directory
--- something for files?
+-- Question
+-- netrwPlain
 
 -- lines:
 -- LineNr
 -- LineNrAbove
 -- LineNrBelow
 
+-- Dark:  1  2  3  4  5  6  7  8
+-- Light: 9  10 11 12 13 14 15 16
+
 local get_highlights = function(colors)
-  local LC = colors[10]
-  local DC = colors[2]
-  local LG = colors[11]
-  local LB = colors[12]
+  local ident = colors[10]
+  local identDark = colors[2]
+
+  local string = colors[11]
+  local type = colors[12]
+  local constant = colors[15]
 
   return {
-    LineNr = { fg = LC },
-    Directory = { fg = LC },
-    MoreMsg = { fg = LC },
-    Question = { fg = LC },
-    QuickFixLine = { fg = LC },
-    Special = { fg = LC },
-    DiagnosticInfo = { fg = LC },
-    Function = { fg = LC },
-    Changed = { fg = LC },
-    CmpItemKindDefault = { fg = LC },
-    SpellRare = { undercurl = true, sp = LC },
-    DiagnosticUnderlineInfo = { underline = true, sp = LC },
+    -- code
+    Function = { fg = ident },
+    Identifier = { fg = ident },
 
-    LineNrAbove = { fg = DC },
-    LineNrBelow = { fg = DC },
-    DiffText = { fg = "NvimLightGrey1", bg = DC },
+    Type = { fg = type },
+    Special = { fg = type },
 
-    ModeMsg = { fg = LG },
-    DiagnosticOk = { fg = LG },
-    String = { fg = LG },
-    Added = { fg = LG },
-    SpellLocal = { undercurl = true, sp = LG },
-    DiagnosticUnderlineOk = { underline = true, sp = LG },
+    String = { fg = string },
 
-    DiagnosticHint = { fg = LB },
-    Identifier = { fg = LB },
-    DiagnosticUnderlineHint = { underline = true, sp = LB },
+    Statement = { fg = constant, bold = true },
+    Constant = { fg = constant },
+
+    -- other
+    LineNr = { fg = ident },
+    LineNrAbove = { fg = identDark },
+    LineNrBelow = { fg = identDark },
+
+    Directory = { fg = ident },
+    Question = { fg = ident },
+    netrwPlain = { fg = constant },
+  }
+end
+
+local get_highlights_but_more_colors = function(colors)
+  local main = colors[10]
+  local mainDark = colors[2]
+
+  local string = colors[11]
+  local ident = colors[12]
+  local type = colors[13]
+  local statement = colors[14]
+  local constant = colors[15]
+
+  return {
+    LineNr = { fg = main },
+    LineNrAbove = { fg = mainDark },
+    LineNrBelow = { fg = mainDark },
+
+    Directory = { fg = main },
+    Question = { fg = main },
+    Function = { fg = main },
+
+    String = { fg = string },
+    Identifier = { fg = ident },
+    Type = { fg = type },
+    Special = { fg = type },
+    Statement = { fg = statement },
+    Constant = { fg = constant },
   }
 end
 
