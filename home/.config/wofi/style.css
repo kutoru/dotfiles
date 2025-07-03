@@ -1,0 +1,63 @@
+@define-color bg --wofi-color0;
+@define-color fg --wofi-color15;
+@define-color border --wofi-color9;
+@define-color extra --wofi-color11;
+
+* {
+  font-family: "CommitMono Nerd Font Mono";
+  font-size: 18px;
+  color: @fg;
+}
+
+window {
+}
+
+#outer-box {
+  border: 3px solid @border;
+}
+
+#input {
+  all: unset;
+  padding: 15px 18px;
+  border-radius: 0;
+  border: none;
+  background-color: @bg;
+}
+
+#input image {
+  color: @extra;
+}
+
+#scroll {
+  border-top: 3px solid @border;
+  background-color: @bg;
+}
+
+#inner-box {
+  padding: 15px;
+  background-color: @bg;
+}
+
+#entry {
+  border: 3px solid transparent;
+  background-color: @bg;
+}
+
+#entry arrow {
+  color: @extra;
+}
+
+#entry:selected {
+  border: 3px solid @extra;
+}
+
+#entry:selected #text {
+  color: @extra;
+}
+
+#entry:drop(active) {
+}
+
+#text {
+  margin: 6px;
+}

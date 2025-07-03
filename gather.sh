@@ -12,6 +12,8 @@ items=(
 
     ~/.bashrc
     ~/.config/kitty/kitty.conf
+    ~/.config/gtk-4.0/settings.ini
+    ~/.config/wofi/style.css
     /etc/sddm.conf.d/default.conf
     /usr/share/sddm/scripts/Xsetup
     /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
