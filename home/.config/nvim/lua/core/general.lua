@@ -49,10 +49,11 @@ vim.diagnostic.config({
 -- remove tildes at eof
 -- vim.opt.fillchars = { eob = " " }
 
--- search
+-- search stuff
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
 
+-- enable highlight only when the search is active
 vim.cmd([[
   augroup vimrc-incsearch-highlight
     autocmd!
