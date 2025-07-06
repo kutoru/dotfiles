@@ -39,7 +39,7 @@ return {
     map("n", "<leader>a", function()
       harpoon:list():add(get_curr_file_path())
     end)
-    map("n", "<leader>h", function()
+    map("n", "<leader>e", function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
     map("n", "<leader>cc", function()

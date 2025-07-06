@@ -17,7 +17,7 @@ for img in "${imgs[@]}"; do
         echo "Skipping" $img
     else
         echo "Generating" $img
-        wal --cols16 -i "$img" -ntesq --contrast 2.0 -p "$filename"
+        wal --cols16 -i "$img" -b '#000000' -ntesq --contrast 2.0 -p "$filename"
     fi
 done
 
@@ -28,13 +28,10 @@ while true; do
 
     # echo "Setting" $img
 
-    swww img "$img" \
-        --transition-type fade \
-        --transition-step 60 \
-        --transition-fps 60
+    swww img "$img" --transition-type fade
 
     filename=$(basename "$img")
-    wal -qf "$filename"
+    wal -nteqf "$filename"
 
-    sleep 60
+    sleep 600
 done

@@ -11,12 +11,12 @@
 # fzf --preview 'echo {} | sed -e "s/^ *\([0-9]*\) *//" -e "s/.\{$COLUMNS\}/&\n/g"' --preview-window down:2
 
 alias _fzfpreview='fzf --preview "echo {} | sed -e \"s/^ *\\([0-9]*\\) *//\" -e \"s/.\\{$COLUMNS\\}/&\\n/g\"" --preview-window down:3'
-alias _fzfdirs='find -L -type d | _fzfpreview'
+# alias _fzfdirs='find -L -type d | _fzfpreview'
 
 alias ls='ls -A --color=auto'
 alias grep='grep --color=auto'
-alias cdf='cd "$(dirname $(_fzfpreview))"'
-alias vlcf='vlc "$(_fzfdirs)"'
+alias cdf='cd "$(dirname "$(_fzfpreview)")"'
+# alias vlcf='vlc "$(_fzfdirs)"'
 
 #COLOR0='\[\e[00m\]'
 #COLOR1='\[\e[01;34m\]'
@@ -26,11 +26,3 @@ alias vlcf='vlc "$(_fzfdirs)"'
 #PS1='[\u@\h \W]\$ '
 #PS1="$COLOR1\u$COLOR0:$COLOR2\W$COLOR0 > "
 PS1="\u:\W > "
-
-# pnpm
-export PNPM_HOME="/home/kutoru/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end

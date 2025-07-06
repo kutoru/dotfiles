@@ -54,8 +54,9 @@ end
 
 map("n", "<M-x>", toggle_line_wrap, { silent = true, expr = true })
 
--- ex abbrev
+-- Explore
 vim.cmd("cnoreabbrev ex Explore")
+map("n", "-", ":Explore<CR>")
 
 -- windows
 map("n", "<Leader>h", "<C-w>h")
